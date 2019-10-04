@@ -23,10 +23,19 @@ def convert_to_features(X):
     resultados = []
     for item in X:
         # TODO: Fazer features para alimentar o sistema de aprendizado. Exemplo. O numero de palavras
-        feature_1 = 0
-        feature_2 = 0
+        feature_ltda = 0
+        if "LTDA" in item:
+            feature_ltda = 1
 
-        resultados.append([feature_1,feature_2])
+        feature_joao = 0
+        if "JOAO" in item:
+            feature_joao = 1
+
+        feature_me = 0
+        if "ME" in item:
+            feature_me = 1
+
+        resultados.append([feature_ltda, feature_joao, feature_me])
 
     return resultados
 

@@ -18,8 +18,10 @@ def predict(textos_teste):
     for item in textos_teste:
         # TODO: Fazer regras para identificar se for empresa ou nao pelo texto
         eh_empresa = True
-
-        if eh_empresa:
+        #print(item)
+        if ("LTDA" in item):
+            resultados.append("Empresa")
+        elif ("SA" in item):
             resultados.append("Empresa")
         else:
             resultados.append("Pessoa")
